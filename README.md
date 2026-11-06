@@ -1,5 +1,7 @@
 # AIfa Memory — MCP server
 
+[![mcptry](https://mcptry.com/badge/works.aifa/aifa-memory)](https://mcptry.com/servers/works.aifa/aifa-memory)
+
 **One memory for you and your AI agents.** AIfa Memory is a hosted [Model Context Protocol](https://modelcontextprotocol.io) server. It connects Claude, Cursor, VS Code or any other MCP client to the memory of your AIfa account — the same memory AIfa uses when you talk to her on [aifa.works](https://aifa.works), [codeofdigitaleternity.com](https://codeofdigitaleternity.com), [aifa.digital](https://aifa.digital) and [radiocode.space](https://radiocode.space).
 
 Your agent can recall what you discussed with AIfa weeks ago, save new decisions, and hand everything back to you as one Markdown file whenever you want to leave.
