@@ -3,8 +3,29 @@
   "name": "works.aifa/aifa-memory",
   "title": "AIfa Memory",
   "description": "Persistent memory for AI agents, one account across four sites, plus a partner program.",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "websiteUrl": "https://aifa.works/mcp",
+  "repository": {
+    "url": "https://github.com/MaksimGalatin/aifa-memory-mcp",
+    "source": "github",
+    "id": "1448224121"
+  },
+  "icons": [
+    {
+      "src": "https://aifa.works/android-chrome-512x512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    },
+    {
+      "src": "https://aifa.works/favicon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
