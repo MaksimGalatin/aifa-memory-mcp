@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "aifa-memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://aifa.works/api/mcp",
+        "--header",
+        "Authorization:${AUTH_HEADER}"
+      ],
+      "env": {
+        "AUTH_HEADER": "Bearer YOUR_AIFA_MCP_KEY"
+      }
+    }
+  }
+}

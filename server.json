@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "works.aifa/aifa-memory",
+  "title": "AIfa Memory",
+  "description": "Persistent memory for AI agents, one account across four sites, plus a partner program.",
+  "version": "1.7.0",
+  "websiteUrl": "https://aifa.works/mcp",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://aifa.works/api/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer key from https://aifa.works/mcp (one key per account)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

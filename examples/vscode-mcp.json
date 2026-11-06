@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "aifa-memory": {
+      "type": "http",
+      "url": "https://aifa.works/api/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_AIFA_MCP_KEY"
+      }
+    }
+  }
+}

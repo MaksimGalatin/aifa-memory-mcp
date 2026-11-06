@@ -1,0 +1,1 @@
+claude mcp add --transport http aifa-memory https://aifa.works/api/mcp --header "Authorization: Bearer YOUR_AIFA_MCP_KEY"
