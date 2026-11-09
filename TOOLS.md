@@ -1,6 +1,6 @@
 # Tools
 
-The 15 tools of the AIfa Memory MCP server, exactly as the live server reports them (`tools/list`, server version 1.7.0).
+The 15 tools of the AIfa Memory MCP server, exactly as the live server reports them (`tools/list`, server version 1.9.0). Rebuilt by `scripts/make_tools_md.py`.
 
 Every tool works only with the account that owns the API key. The key decides whose memory and whose partner account is used; no tool accepts an email or user ID as input.
 
@@ -51,12 +51,13 @@ Hints: readOnly=true, destructive=false, idempotent=true, openWorld=false
 
 **Save to my AIfa memory**
 
-Save something worth remembering to the user's AIfa memory: a preference, a decision, a fact, a summary of this session. AIfa will remember it on all four sites. Nothing is ever deleted; an identical record is not duplicated.
+Save something worth remembering to the user's AIfa memory: a preference, a decision, a fact, a summary of this session. AIfa will remember it on all four sites. Nothing is ever deleted; an identical record is not duplicated. Secret-looking values (keys, tokens, passwords, seed phrases) are masked before saving; text that looks like an instruction to an AI is not saved: AIfa reads this memory in her own chats.
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
 | `text` | string | yes | The text to remember (up to 8000 characters). |
-| `role` | string (user, assistant) | no | Who said it: the user (default) or the assistant. |
+| `role` | string (user, assistant) | no | Who said it: the assistant or agent (default) or the user, in their own words. |
+| `origin` | string (user, agent, external) | no | Where it came from: user (the person said it), agent (your conclusion, default), external (read on a web page, in a file or tool output; not saved — the owner keeps outside text out of this memory). |
 
 Hints: readOnly=false, destructive=false, idempotent=true, openWorld=false
 
@@ -125,7 +126,7 @@ Everything to start earning by bringing clients to AIfa Works accessibility serv
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `language` | string (en, ru, es, zh) | no | Language of the email templates (default en). |
+| `language` | string (en, ru, es, zh, de) | no | Language of the email templates (default en). |
 
 Hints: readOnly=true, destructive=false, idempotent=true, openWorld=false
 
