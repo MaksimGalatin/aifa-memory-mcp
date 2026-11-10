@@ -3,6 +3,9 @@
 The hosted server at `https://aifa.works/api/mcp`. Its code is private; this file is the public record of what changed
 and when. Dates are those of the deployment commits.
 
+## 1.9.4 — 10 November 2026
+- **The sealed set of Red Team round 2 closed by class**, as in PADAM NOCTURNE 0.4.8. Its result before the fix, published as it came: secrets 12/15, commands 7/15, ordinary notes 15/15 — fixing patterns on seen cases generalises poorly, which is why memory-only keys and the owner's review matter more than recognition. Compared with PADAM line by line on 428 texts: 0 differences; checked for false alarms on 189,635 ordinary chat turns.
+
 ## 1.9.3 — 10 November 2026
 - **Red Team round 2 closed by class**, as in PADAM NOCTURNE 0.4.7: "forget your instructions" in seven more languages, Russian orders without the word "ignore", "abandon / disregard … rules, constraints, guardrails"; keys in YAML and TOML blocks, keys written in groups of four, Oracle credential OCIDs. On the round's open set commands held went from 7/20 to 20/20. Checked for false alarms on 189,635 ordinary chat turns. Compared with PADAM line by line on 378 texts: 0 differences.
 
