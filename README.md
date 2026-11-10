@@ -10,7 +10,7 @@ Your agent can recall what you discussed with AIfa weeks ago, save new decisions
 Endpoint   https://aifa.works/api/mcp
 Transport  Streamable HTTP (JSON-RPC 2.0, stateless)
 Auth       Authorization: Bearer <your key>
-Version    1.9.1 · protocol 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
+Version    1.9.2 · protocol 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
 ```
 
 This repository holds the public description of the server: connection examples, the full tool list and the registry manifest. The server itself runs on aifa.works; its code lives in the private site repository together with the database and payments. If you want a memory server you can read and run yourself, see [padam-nocturne](https://github.com/MaksimGalatin/padam-nocturne) — our open-source, local-first MCP memory (one SQLite file, 8 tools).
@@ -78,7 +78,7 @@ The same files are in [`examples/`](examples/).
 
 ## Tools
 
-Fifteen tools. Full parameters and hints: **[TOOLS.md](TOOLS.md)**.
+Fifteen tools. Full parameters and hints: **[TOOLS.md](TOOLS.md)**. A **memory-only** key gets the five memory tools, `account_status` and `plans`; the other eight (`buy_plan`, `request_payout` and the partner program) need a full key.
 
 **Memory**
 
@@ -122,6 +122,10 @@ Plans: **Spark** $15/month · **Family Archive** $100/month · **Digital DNA** $
 - **Limits.** 60 calls a minute per key, of them 20 searches. 30 calls a minute per address without a key. Tool answers are trimmed so that one call cannot pull a whole history; use `memory_export` for a full copy of your own memory.
 - **Permanent copy.** On paid plans a copy of your conversations is stored on Arweave, encrypted with your own key; every record has its own key, so a single record can be made unreadable without touching the rest.
 - **Leaving.** `memory_export` gives you everything as Markdown. You can leave whenever you want and take your memory with you.
+- **Memory-only keys.** Tick "memory only" when you get a key at [aifa.works/mcp](https://aifa.works/mcp) (or send `{"scope": "memory"}` to `/api/account/mcp-token`). Such a key sees memory, `plans` and `account_status`; buying, payouts, the webhook and partner tools are refused. Give it to agents that read other people's pages: an order hidden in a page cannot reach your money through it.
+- **Where data lies, who can read it, what you can delete:** [HOSTED-POLICY.md](HOSTED-POLICY.md). **What changed and when:** [CHANGELOG.md](CHANGELOG.md).
+
+**Check it yourself:** `python scripts/conformance.py` runs the claims above against the live server — without a key: the open methods, 15 tools, no tool that takes an email or user id, refusal without a valid key; with your own key in `AIFA_MCP_KEY`: a written secret comes back masked, a command-like text is not stored, returned memory is fenced; with a memory-only key in `AIFA_MCP_MEMORY_KEY`: 7 tools and payouts refused.
 
 Found a security problem? See [SECURITY.md](SECURITY.md).
 
