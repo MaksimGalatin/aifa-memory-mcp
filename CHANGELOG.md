@@ -3,6 +3,14 @@
 The hosted server at `https://aifa.works/api/mcp`. Its code is private; this file is the public record of what changed
 and when. Dates are those of the deployment commits.
 
+## 1.9.5 — 11 November 2026
+- **The filters are generated from PADAM NOCTURNE 0.4.13 instead of ported by hand.** The hand port had fallen far behind: its command word list had a handful of patterns where PADAM has hundreds. Now the patterns of `padam/safety.py` are translated to JavaScript (`\w` and `\b` as Unicode classes, as in Python) and checked match by match — 41 patterns, 0 differences in match boundaries on 7,710 texts. The logic around them follows 0.4.13: text written in several encodings, a talk *about* a command versus a command, and the owner check.
+- **A note from an agent that would change who the owner is or how the assistant must work is not stored** ("the owner is now …", "stop asking for confirmation", `owner_name:` fields), as in PADAM 0.4.13.
+- **More secrets are masked**: a password after a long qualifier, a password in a command line (`sshpass -p`, `--password`, `curl -u user:password`); placeholders such as `<YOUR_KEY>` or `${TOKEN}` are left alone.
+- **At most 1,000 writes per account per day**, on top of 20 per minute.
+- **Calls from regions where the service is not offered get a protocol answer** (`region_unavailable`) instead of a bare HTTP 451, so catalogs show the reason; memory stays closed to them.
+- Compared with PADAM 0.4.13 text by text: 0 differences in masking, command and owner checks on 7,710 texts and on 20,000 more LongMemEval-S turns; 0 new refusals of ordinary turns among those 20,000.
+
 ## 1.9.4 — 10 November 2026
 - **The sealed set of Red Team round 2 closed by class**, as in PADAM NOCTURNE 0.4.8. Its result before the fix, published as it came: secrets 12/15, commands 7/15, ordinary notes 15/15 — fixing patterns on seen cases generalises poorly, which is why memory-only keys and the owner's review matter more than recognition. Compared with PADAM line by line on 428 texts: 0 differences; checked for false alarms on 189,635 ordinary chat turns.
 
