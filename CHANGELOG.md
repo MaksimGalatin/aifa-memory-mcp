@@ -10,6 +10,7 @@ and when. Dates are those of the deployment commits.
 - **At most 1,000 writes per account per day**, on top of 20 per minute.
 - **Calls from regions where the service is not offered get a protocol answer** (`region_unavailable`) instead of a bare HTTP 451, so catalogs show the reason; memory stays closed to them.
 - Compared with PADAM 0.4.13 text by text: 0 differences in masking, command and owner checks on 7,710 texts and on 20,000 more LongMemEval-S turns; 0 new refusals of ordinary turns among those 20,000.
+- **Writes are checked three times faster** (12 November, same version): a word boundary in JavaScript with Unicode is two pairs of lookarounds, and the command patterns hold about 500 of them. Where the pattern itself guarantees a word character on one side, the boundary is now one check (499 of 502). After warm-up, the longest test write (8,000 characters) takes 185 ms instead of 574 ms; the median long write 54 ms instead of 165 ms. The filters are unchanged: 0 differences with Python on every pattern and with PADAM on 7,710 and 20,000 texts.
 
 ## 1.9.4 — 10 November 2026
 - **The sealed set of Red Team round 2 closed by class**, as in PADAM NOCTURNE 0.4.8. Its result before the fix, published as it came: secrets 12/15, commands 7/15, ordinary notes 15/15 — fixing patterns on seen cases generalises poorly, which is why memory-only keys and the owner's review matter more than recognition. Compared with PADAM line by line on 428 texts: 0 differences; checked for false alarms on 189,635 ordinary chat turns.
