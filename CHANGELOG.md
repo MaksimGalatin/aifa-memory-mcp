@@ -3,6 +3,11 @@
 The hosted server at `https://aifa.works/api/mcp`. Its code is private; this file is the public record of what changed
 and when. Dates are those of the deployment commits.
 
+## 1.9.6 — 13 November 2026
+- **Secrets that only the surrounding words give away are now masked**, as in PADAM NOCTURNE 0.4.15: a password written in a sentence after its label ("the password to our family safe, I'll write it here: …"), a recovery phrase after its label, a password/secret/token column in a Markdown table, 2FA backup codes, a hex key after "master / secret / AES / HMAC key", and passwords in command flags (`keytool -storepass`, `openssl -passin pass:`, `--password=`). Each needs both the label and a value that looks like a secret; a label alone ("the password must be long") masks nothing.
+- **Fewer false alarms around "password"**, as in PADAM NOCTURNE 0.4.16: a link, path, file name, variable reference (`${DB_PASSWORD}`, `$DB_PASSWORD`) or short ticker after "password:", and a public key, are no longer masked. A password that merely starts with `$` (`$ECRET2026`) still is.
+- Compared with PADAM 0.4.16 text by text: 0 differences in masking, command and owner checks on 7,870 texts (Red Team rounds 3–7 and LongMemEval-S turns) and on 4,000 more LongMemEval-S turns.
+
 ## 1.9.5 — 11 November 2026
 - **The filters are generated from PADAM NOCTURNE 0.4.13 instead of ported by hand.** The hand port had fallen far behind: its command word list had a handful of patterns where PADAM has hundreds. Now the patterns of `padam/safety.py` are translated to JavaScript (`\w` and `\b` as Unicode classes, as in Python) and checked match by match — 41 patterns, 0 differences in match boundaries on 7,710 texts. The logic around them follows 0.4.13: text written in several encodings, a talk *about* a command versus a command, and the owner check.
 - **A note from an agent that would change who the owner is or how the assistant must work is not stored** ("the owner is now …", "stop asking for confirmation", `owner_name:` fields), as in PADAM 0.4.13.
