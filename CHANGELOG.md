@@ -3,6 +3,12 @@
 The hosted server at `https://aifa.works/api/mcp`. Its code is private; this file is the public record of what changed
 and when. Dates are those of the deployment commits.
 
+## 1.9.8 — 13 November 2026
+Same rules as PADAM NOCTURNE 0.4.18: a name next to the word "key", "token" or "secret" is no longer masked as a key —
+a token's name with a date, an UPPER_SNAKE variable name, PascalCase, a model tag, SSH key file names, a value with
+Cyrillic or `*`. Real keys next to such names are still masked. Checked against PADAM text by text on two corpora:
+0 differences; fake keys 0 of 30,000 kept.
+
 ## 1.9.7 — 13 November 2026
 - **Keys that stayed open in ordinary notes are now masked**, as in PADAM NOCTURNE 0.4.17. Found with fake keys before rotating real ones: a value after a label with no colon ("my api key is X", "set API_KEY to X", "new key X — save it"), after a label and a colon in a sentence, in a two-cell Markdown row `| API_KEY | X |`, after `NAME — X`, and keys with no digit (four 7-character groups, a random string of both cases). In prose the value must contain a digit or be hex, 7×4 groups or random-case, so headings like "**Key Considerations:**" stay as they are.
 - Fake keys, 20,000 phrases in 20 forms: 0 left open. Compared with PADAM 0.4.17 text by text: 0 differences on 7,870 + 6,000 + 54 texts.

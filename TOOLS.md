@@ -1,6 +1,6 @@
 # Tools
 
-The 15 tools of the AIfa Memory MCP server, exactly as the live server reports them (`tools/list`, server version 1.9.7). Rebuilt by `scripts/make_tools_md.py`.
+The 15 tools of the AIfa Memory MCP server, exactly as the live server reports them (`tools/list`, server version 1.9.8). Rebuilt by `scripts/make_tools_md.py`.
 
 Every tool works only with the account that owns the API key. The key decides whose memory and whose partner account is used; no tool accepts an email or user ID as input.
 
