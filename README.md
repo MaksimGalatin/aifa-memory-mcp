@@ -10,7 +10,7 @@ Your agent can recall what you discussed with AIfa weeks ago, save new decisions
 Endpoint   https://aifa.works/api/mcp
 Transport  Streamable HTTP (JSON-RPC 2.0, stateless)
 Auth       Authorization: Bearer <your key>
-Version    1.9.6 · protocol 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
+Version    1.9.7 · protocol 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
 ```
 
 This repository holds the public description of the server: connection examples, the full tool list and the registry manifest. The server itself runs on aifa.works; its code lives in the private site repository together with the database and payments. If you want a memory server you can read and run yourself, see [padam-nocturne](https://github.com/MaksimGalatin/padam-nocturne) — our open-source, local-first MCP memory (one SQLite file, 8 tools).

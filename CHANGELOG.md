@@ -3,6 +3,10 @@
 The hosted server at `https://aifa.works/api/mcp`. Its code is private; this file is the public record of what changed
 and when. Dates are those of the deployment commits.
 
+## 1.9.7 — 13 November 2026
+- **Keys that stayed open in ordinary notes are now masked**, as in PADAM NOCTURNE 0.4.17. Found with fake keys before rotating real ones: a value after a label with no colon ("my api key is X", "set API_KEY to X", "new key X — save it"), after a label and a colon in a sentence, in a two-cell Markdown row `| API_KEY | X |`, after `NAME — X`, and keys with no digit (four 7-character groups, a random string of both cases). In prose the value must contain a digit or be hex, 7×4 groups or random-case, so headings like "**Key Considerations:**" stay as they are.
+- Fake keys, 20,000 phrases in 20 forms: 0 left open. Compared with PADAM 0.4.17 text by text: 0 differences on 7,870 + 6,000 + 54 texts.
+
 ## 1.9.6 — 13 November 2026
 - **Secrets that only the surrounding words give away are now masked**, as in PADAM NOCTURNE 0.4.15: a password written in a sentence after its label ("the password to our family safe, I'll write it here: …"), a recovery phrase after its label, a password/secret/token column in a Markdown table, 2FA backup codes, a hex key after "master / secret / AES / HMAC key", and passwords in command flags (`keytool -storepass`, `openssl -passin pass:`, `--password=`). Each needs both the label and a value that looks like a secret; a label alone ("the password must be long") masks nothing.
 - **Fewer false alarms around "password"**, as in PADAM NOCTURNE 0.4.16: a link, path, file name, variable reference (`${DB_PASSWORD}`, `$DB_PASSWORD`) or short ticker after "password:", and a public key, are no longer masked. A password that merely starts with `$` (`$ECRET2026`) still is.
