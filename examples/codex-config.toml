@@ -1,0 +1,3 @@
+[mcp_servers.aifa-memory]
+url = "https://aifa.works/api/mcp"
+bearer_token_env_var = "AIFA_MCP_KEY"
