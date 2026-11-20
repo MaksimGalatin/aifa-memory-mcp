@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="./assets/banner.svg" alt="AIfa Memory · Hosted Streamable HTTP MCP Server" width="100%" />
 </p>
 
@@ -17,6 +17,12 @@
 </p>
 
 **One unified memory for you and every AI agent you connect.** AIfa Memory is the official hosted [Model Context Protocol](https://modelcontextprotocol.io) server by [**CODE Eternal LLC**](https://github.com/CodeOfDigitalEternity). It connects Claude Code, Antigravity, Cursor, VS Code, Claude Desktop, Windsurf, Codex, or any Streamable HTTP MCP client directly to your unified CODE Eternal account memory across [**aifa.works**](https://aifa.works), [**codeofdigitaleternity.com**](https://www.codeofdigitaleternity.com), [**aifa.digital**](https://aifa.digital), and [**radiocode.space**](https://radiocode.space).
+
+**One-click install:** [Install in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=aifa-memory&config=eyJ1cmwiOiJodHRwczovL2FpZmEud29ya3MvYXBpL21jcCIsImhlYWRlcnMiOnsiQXV0aG9yaXphdGlvbiI6IkJlYXJlciA8eW91cl9rZXk%2BIn19) · [Get API Key](https://aifa.works/mcp) · CLI (`Claude Code`): `claude mcp add --transport http aifa-memory https://aifa.works/api/mcp --header "Authorization: Bearer <key>"` · [★ Star on GitHub](https://github.com/MaksimGalatin/aifa-memory-mcp/stargazers)
+
+<p align="center">
+  <img src="./assets/demo-memory.svg" alt="AIfa Memory Cross-Client Shielded Flow" width="100%" />
+</p>
 
 ```text
 Endpoint    https://aifa.works/api/mcp

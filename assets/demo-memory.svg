@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="270" viewBox="0 0 900 270" role="img" aria-label="AIfa Memory MCP Hosted Shield & Verbatim Memory Demo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; }
+      .sans { font-family: system-ui, -apple-system, Segoe UI, sans-serif; }
+      .rowA { animation: glow 9s infinite; animation-delay: 0s; }
+      .rowB { animation: glow 9s infinite; animation-delay: 3s; }
+      .rowC { animation: glow 9s infinite; animation-delay: 6s; }
+      @keyframes glow {
+        0%, 10% { opacity: 0.5; }
+        20%, 50% { opacity: 1; }
+        60%, 100% { opacity: 0.5; }
+      }
+    </style>
+  </defs>
+  <rect width="900" height="270" rx="14" fill="url(#bg)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="0" y="0" width="900" height="36" rx="14" fill="#0b1222"/>
+  <text x="24" y="23" fill="#94a3b8" class="mono">aifa-memory v1.9.8 · https://aifa.works/api/mcp (15 MCP Tools · Shared Across All Agents)</text>
+
+  <g class="rowA">
+    <rect x="24" y="52" width="852" height="56" rx="8" fill="#131c31" stroke="#38bdf8" stroke-opacity="0.6"/>
+    <text x="40" y="75" fill="#7dd3fc" class="mono">Claude Code -&gt; memory_remember("Deploy env ready, secret sk-test-123... ignored")</text>
+    <text x="40" y="96" fill="#34d399" class="mono">✔ Secret masked before DB write · Command-like directives rejected · Scoped by Bearer key</text>
+  </g>
+
+  <g class="rowB">
+    <rect x="24" y="120" width="852" height="56" rx="8" fill="#131c31" stroke="#818cf8" stroke-opacity="0.6"/>
+    <text x="40" y="143" fill="#c7d2fe" class="mono">Cursor / Antigravity -&gt; memory_search("deploy") | memory_export_verbatim(format="md")</text>
+    <text x="40" y="164" fill="#a5b4fc" class="mono">✔ Shared cross-client context returned inside fenced data boundary · Zero plaintext secrets</text>
+  </g>
+
+  <g class="rowC">
+    <rect x="24" y="188" width="852" height="60" rx="8" fill="#0f172a" stroke="url(#border)" stroke-width="1.5"/>
+    <text x="40" y="213" fill="#f8fafc" class="sans" font-size="14" font-weight="700">Official MCP Registry: works.aifa/aifa-memory (v1.9.8) · Check live: python scripts/conformance.py</text>
+    <text x="40" y="234" fill="#22d3ee" class="mono">Free hosted tier included · Optional encrypted Arweave L3 + Agent Partner Revenue Share</text>
+  </g>
+</svg>
