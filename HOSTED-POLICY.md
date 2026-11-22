@@ -2,7 +2,7 @@
 
 This page says what the hosted AIfa Memory server at `https://aifa.works/api/mcp` stores, where, who can read it,
 and what you can and cannot delete today. Every line says how we know it. Where something is not done yet, it says so.
-Last reviewed: 12 November 2026, server 1.9.5.
+Last reviewed: 22 November 2026, server 1.9.8.
 
 The server code is private (it lives with the website and payments). If you need memory you can read and run yourself,
 use [PADAM NOCTURNE](https://github.com/MaksimGalatin/padam-nocturne) — open source, local, one SQLite file.
@@ -22,6 +22,7 @@ use [PADAM NOCTURNE](https://github.com/MaksimGalatin/padam-nocturne) — open s
 - **In the database your conversations are plain text.** This is a deliberate choice: an earlier per-record encryption with a key kept next to the database made a third of people's memory unreadable after a key change and protected only against reading the database without the application. The operator of the service can technically read the database.
 - **On Arweave only ciphertext goes out**, AES-256-GCM, one key per record, wrapped by your personal key. The keys never go to the chain. Monthly limits by plan: Spark 30 MB, Family Archive 300 MB, Digital DNA 1 GB.
 - **Your own key.** In the cabinet you can view and download your personal key and decrypt your Arweave records yourself, without us.
+- **Per-user Bearer authentication:** discovery (`initialize`, `tools/list`) is public; every `tools/call` invocation (including `memory_about`, `plans`, and `partner_kit`) requires a per-user `Authorization: Bearer` key issued at [aifa.works/mcp](https://aifa.works/mcp) (missing/invalid tokens return `HTTP 401`).
 - **Agents are guests.** The account comes only from the MCP key, never from the request. Secret-looking values are masked before storing, text that looks like a command is not stored, text an agent marks as read from outside is not stored by default, and memory returned to an agent is fenced as data with a 128-bit marker. A note from an agent that would change who the owner is or how the assistant must work is not stored either. These are the same filters as PADAM NOCTURNE: since 1.9.5 the patterns are generated from PADAM's `padam/safety.py` (0.4.13) instead of ported by hand, and a text-by-text comparison gives 0 differences in masking, command and owner checks on 7,710 texts (Red Team sets, LongMemEval-S turns, project notes) and on 20,000 more LongMemEval-S turns.
 - **Write limits** (since 1.9.5): 20 writes per minute and 1,000 per day per account; above that the tool answers with the limit instead of saving.
 - **Regions where the service is not offered** get a protocol answer (`region_unavailable`, as an error result of the tool call) and no access to memory.
