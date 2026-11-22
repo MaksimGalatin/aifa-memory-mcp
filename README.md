@@ -9,6 +9,7 @@
 <p align="center">
   <a href="https://registry.modelcontextprotocol.io"><img src="https://img.shields.io/badge/MCP_Registry-works.aifa%2Faifa--memory-0EA5E9?style=flat-square" alt="MCP Registry" /></a>
   <a href="https://mcptry.com/servers/works.aifa/aifa-memory"><img src="https://mcptry.com/badge/works.aifa/aifa-memory" alt="mcptry" /></a>
+  <a href="https://github.com/hashgraph-online/hol-guard/pull/8324"><img src="https://img.shields.io/badge/HOL_Guard-Listed_(%238324)-22C55E?style=flat-square" alt="HOL Guard Listed" /></a>
   <a href="https://aifa.works/mcp"><img src="https://img.shields.io/badge/Transport-Streamable_HTTP_(JSON--RPC_2.0)-14B8A6?style=flat-square" alt="Streamable HTTP" /></a>
   <a href="TOOLS.md"><img src="https://img.shields.io/badge/Tools-15_(5_Memory_+_10_Account%2FPartner)-6366F1?style=flat-square" alt="15 MCP Tools" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Docs_%26_Examples-MIT-22C55E?style=flat-square" alt="MIT Docs" /></a>
@@ -195,6 +196,8 @@ With a **memory-only** key, agents only have access to the 5 Memory tools + `acc
 
 ## Plans & Quotas
 
+Live billing tiers, current availability, and upgrade options are published at **[aifa.works/pricing](https://aifa.works/pricing)** and via the `plans` MCP tool.
+
 | Plan | Price | Chat Quota (5h window) | Document Storage | Monthly Eternal Arweave Quota |
 |---|---|---|---|---|
 | **Free** | `$0` | `30` msgs / `5h` (logged in) | `50 MB` (`10` uploads / `5h`) | `0 MB` (not anchored on-chain) |
@@ -210,6 +213,7 @@ With a **memory-only** key, agents only have access to the 5 Memory tools + `acc
 - **Data fencing & secret masking:** Command-like text is blocked from memory storage; sensitive tokens written accidentally are redacted; retrieved records are fenced as untrusted data.
 - **Scoped memory-only keys:** Create via `POST /api/account/mcp-token` with `{"scope": "memory"}` when wiring agents that browse third-party web pages, preventing prompt-injected money/payout calls.
 - **Per-record crypto-shredding:** Paid Arweave backups encrypt every record with its own key so single-record deletion destroys only that record's key.
+- **Public registry & security listings:** Official MCP Registry (`works.aifa/aifa-memory`), [`HOL Guard #8324`](https://github.com/hashgraph-online/hol-guard/pull/8324), [`mcptry` (`Working 99 / Security A`)](https://mcptry.com/servers/works.aifa/aifa-memory), and `Sagargupta16/awesome-mcp-servers`.
 - **Independently verifiable live check (`scripts/conformance.py`):**
 
 ```bash
