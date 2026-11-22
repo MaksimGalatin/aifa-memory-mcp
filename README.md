@@ -14,7 +14,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/Docs_%26_Examples-MIT-22C55E?style=flat-square" alt="MIT Docs" /></a>
   <a href="https://aifa.works/terms"><img src="https://img.shields.io/badge/Hosted_Cloud-CODE_Platform_Terms-F59E0B?style=flat-square" alt="CODE Platform Terms" /></a>
   <a href="https://github.com/CodeOfDigitalEternity"><img src="https://img.shields.io/badge/Org-CODE_Eternal_LLC_(NM_%230008138873)-1E293B?style=flat-square" alt="CODE Eternal LLC" /></a>
+  <a href="https://github.com/MaksimGalatin/aifa-memory-mcp/stargazers"><img src="https://img.shields.io/github/stars/MaksimGalatin/aifa-memory-mcp?style=flat-square&logo=github&color=F59E0B" alt="GitHub Stars" /></a>
 </p>
+
+> ⭐ **If AIfa Memory helps your agents keep persistent encrypted memory across clients, please [Star this repo](https://github.com/MaksimGalatin/aifa-memory-mcp/stargazers)** and check our local sovereign firewall [**PADAM · NOCTURNE**](https://github.com/MaksimGalatin/padam-nocturne) (`pip install padam-nocturne`).
 
 **One unified memory for you and every AI agent you connect.** AIfa Memory is the official hosted [Model Context Protocol](https://modelcontextprotocol.io) server by [**CODE Eternal LLC**](https://github.com/CodeOfDigitalEternity). It connects Claude Code, Antigravity, Cursor, VS Code, Claude Desktop, Windsurf, Codex, or any Streamable HTTP MCP client directly to your unified CODE Eternal account memory across [**aifa.works**](https://aifa.works), [**codeofdigitaleternity.com**](https://www.codeofdigitaleternity.com), [**aifa.digital**](https://aifa.digital), and [**radiocode.space**](https://radiocode.space).
 
