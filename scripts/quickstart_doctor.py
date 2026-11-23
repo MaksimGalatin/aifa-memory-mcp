@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""AIfa Memory MCP Quickstart Doctor (CLI, v2.0.0 — Фишка 10).
+"""AIfa Memory MCP Quickstart Doctor (CLI, v2.3.0 — Фишка 10).
 
 За 3 секунды проверяет живое подключение к https://aifa.works/api/mcp:
 - рукопожатие initialize и версию сервера;
-- список tools/list (все 17 инструментов);
+- список tools/list (все 19 инструментов);
 - протокол MCP 2026-07-28 (server/discover);
 - при наличии ключа (--key или AIFA_MCP_KEY): авторизованный вызов memory_about;
 - при флаге --print-configs: готовые конфигурации для 7 популярных ИИ-клиентов.
@@ -58,7 +58,7 @@ def run_doctor(url: str = DEFAULT_URL, api_key: str = "") -> dict[str, Any]:
             "jsonrpc": "2.0",
             "id": 1,
             "method": "initialize",
-            "params": {"protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "aifa-quickstart-doctor", "version": "2.0.0"}},
+            "params": {"protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "aifa-quickstart-doctor", "version": "2.3.0"}},
         },
         hdrs,
     )
@@ -147,7 +147,7 @@ def print_client_configs(url: str, api_key: str) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="AIfa Memory MCP Quickstart Doctor (v2.1.0)")
+    parser = argparse.ArgumentParser(description="AIfa Memory MCP Quickstart Doctor (v2.3.0)")
     parser.add_argument("--url", default=os.environ.get("AIFA_MCP_URL", DEFAULT_URL), help="MCP endpoint URL")
     parser.add_argument("--key", default=os.environ.get("AIFA_MCP_KEY", ""), help="Optional amcp_... Bearer key")
     parser.add_argument("--json", action="store_true", dest="as_json", help="Print JSON output")

@@ -2,7 +2,7 @@
 
 This page says what the hosted AIfa Memory server at `https://aifa.works/api/mcp` stores, where, who can read it,
 and what you can and cannot delete today. Every line says how we know it. Where something is not done yet, it says so.
-Last reviewed: 22 November 2026, server 1.9.8.
+Last reviewed: 23 November 2026, server 2.3.0.
 
 The server code is private (it lives with the website and payments). If you need memory you can read and run yourself,
 use [PADAM NOCTURNE](https://github.com/MaksimGalatin/padam-nocturne) — open source, local, one SQLite file.

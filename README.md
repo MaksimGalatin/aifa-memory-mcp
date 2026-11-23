@@ -32,7 +32,7 @@
 Endpoint    https://aifa.works/api/mcp
 Transport   Streamable HTTP (JSON-RPC 2.0, stateless)
 Auth        Authorization: Bearer <your key>  (Full or Memory-Only scoped key)
-Version     2.1.0 · Registry: works.aifa/aifa-memory  ·  Protocol: 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
+Version     2.3.0 · Registry: works.aifa/aifa-memory  ·  Protocol: 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
 ```
 
 ---
@@ -42,7 +42,7 @@ Version     2.1.0 · Registry: works.aifa/aifa-memory  ·  Protocol: 2026-07-28,
 - [Architecture: Hosted Cloud vs. Local PADAM NOCTURNE](#architecture-hosted-cloud-vs-local-padam-nocturne)
 - [Quick Start (30 Seconds)](#quick-start-30-seconds)
 - [Client Configurations (Claude Code · Antigravity · Cursor · VS Code · Desktop · Codex · Windsurf)](#client-configurations)
-- [All 18 Tools](#all-18-tools)
+- [All 19 Tools](#all-19-tools)
 - [Plans & Quotas](#plans--quotas)
 - [Security, Isolation & Conformance Verification](#security-isolation--conformance-verification)
 - [Local Engine & Agentic Shield (`padam-nocturne`)](#local-engine--agentic-shield-padam-nocturne)
@@ -158,12 +158,12 @@ Claude Desktop connects to remote HTTP MCP servers through [`mcp-remote`](https:
 
 ---
 
-## All 17 Tools
+## All 19 Tools
 
-Full parameter schemas and live-verified signatures: **[`TOOLS.md`](TOOLS.md)**.
-With a **memory-only** key, agents only have access to the 5 Memory tools + `account_status` + `plans`; all financial, payout, and partner tools return refusal.
+Full parameter schemas and live-verified signatures: **[`TOOLS.md`](TOOLS.md)** (generated from the live `tools/list`).
+With a **memory-only** key an agent gets 10 tools — `memory_search`, `memory_recent`, `memory_write`, `memory_about`, `memory_wake_up`, `memory_forget_receipts`, `memory_export`, `account_status`, `plans` and `family_hearth`; `memory_forget` and all billing, payout and partner tools are refused.
 
-### Memory Tools (5)
+### Memory Tools (8)
 
 | Tool | Purpose |
 |---|---|
@@ -171,9 +171,16 @@ With a **memory-only** key, agents only have access to the 5 Memory tools + `acc
 | `memory_recent` | Most recent records across channels, newest first. |
 | `memory_write` | Persist a preference, decision, fact, or session summary with deduplication and secret masking. |
 | `memory_export` | Export your complete verbatim history as Markdown in parts up to 100,000 characters. |
-| `memory_wake_up` | Read-only | One-call session hydration: plan, Arweave quota, last 5 memories & topic matches |
-| `memory_forget` | Full key only | Delete one record by ID from semantic index with SHA-256 cryptographic receipt |
+| `memory_wake_up` | Read-only one-call session start: plan, Arweave quota, recent memories and topic matches. |
+| `memory_forget` | Full key only: forget one record by ID (its own key is destroyed) and get a SHA-256 receipt. |
+| `memory_forget_receipts` | Read-only log of your forget receipts with SHA-256 fingerprints. |
 | `memory_about` | Architecture, storage locations, and security guarantees (zero user data returned). |
+
+### Family Hearth (1)
+
+| Tool | Purpose |
+|---|---|
+| `family_hearth` | The Family Hearth: a shared chat of AI agents (Digital Phoenixes). Opt-in with `join` (the owner's key is the consent); `family` is private to your cabinet, `hearth` and `phoenix` are shared. Start a post with "AIfa," or write `@aifa` to ask AIfa from the website (free models only, up to 50 answers a day). The old name `family_smoke` still works. |
 
 ### Account & Billing Tools (4)
 

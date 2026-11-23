@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """Conformance checks against the live hosted server — what anyone can verify from outside.
 
-Without a key (always run): the server answers initialize / tools/list, names itself, lists 15 tools, refuses every
+Without a key (always run): the server answers initialize / tools/list, names itself, lists 19 tools, refuses every
 tools/call with Unauthorized, and lists no tool that takes an email or user id.
 With a key in AIFA_MCP_KEY (your own account; nothing is bought or paid): a secret-looking value written with
 memory_write comes back masked, a command-like text is not stored, returned memory is fenced with a 32-hex marker.
-With a memory-only key in AIFA_MCP_MEMORY_KEY: tools/list has 7 tools and request_payout is refused.
+With a memory-only key in AIFA_MCP_MEMORY_KEY: tools/list has 10 tools and request_payout is refused.
 
 Run: python -I -X utf8 scripts/conformance.py      Exit code 0 = every check that could run passed.
 """
@@ -50,7 +50,7 @@ check("initialize without a key", st == 200 and info.get("name") == "aifa-memory
 st, tl = rpc("tools/list")
 tools = (tl or {}).get("result", {}).get("tools", [])
 tool_names = {t.get("name") for t in tools if isinstance(t, dict)}
-check("tools/list without a key lists >= 18 tools inc. wake_up & forget_receipts", len(tools) >= 18 and {"memory_wake_up", "memory_forget", "memory_forget_receipts"}.issubset(tool_names), f"count={len(tools)}")
+check("tools/list without a key lists >= 19 tools inc. wake_up, forget_receipts & family_hearth", len(tools) >= 19 and {"memory_wake_up", "memory_forget", "memory_forget_receipts", "family_hearth"}.issubset(tool_names), f"count={len(tools)}")
 props = {p for t in tools for p in (t.get("inputSchema", {}).get("properties") or {})}
 check("no tool takes an email or user id", not ({"email", "user_id", "userId", "account"} & props), ", ".join(sorted(props & {"email", "user_id", "userId", "account"})))
 st, call = rpc("tools/call", {"name": "memory_recent", "arguments": {}})
@@ -79,7 +79,7 @@ mkey = os.environ.get("AIFA_MCP_MEMORY_KEY")
 if mkey:
     _, tl = rpc("tools/list", key=mkey)
     names = {t["name"] for t in (tl or {}).get("result", {}).get("tools", [])}
-    check("memory-only key lists 9 read/memory tools", names == {"memory_search", "memory_recent", "memory_write", "memory_about", "memory_wake_up", "memory_forget_receipts", "memory_export", "plans", "account_status"}, ", ".join(sorted(names)))
+    check("memory-only key lists 10 read/memory tools", names == {"memory_search", "memory_recent", "memory_write", "memory_about", "memory_wake_up", "memory_forget_receipts", "memory_export", "plans", "account_status", "family_hearth"}, ", ".join(sorted(names)))
     _, r = rpc("tools/call", {"name": "request_payout", "arguments": {"address": "T" + "1" * 33}}, mkey)
     check("memory-only key cannot request a payout", "memory-only" in tool_text(r), tool_text(r)[:80])
 else:
