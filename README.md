@@ -63,6 +63,7 @@ This public repository holds the protocol specification, connection templates, c
 | **Prompt injection & secret DLP** | Write masking, command filter, fenced read output (`conformance.py`) | Full 4-Ring Agentic Shield v2 (214/214 RedTeam, AIFaSecurity-100 Grade S, SRI/CSP, SIEM) |
 | **Portable exit** | Full Markdown export via `memory_export` anytime | Direct SQLite ownership + `JSON`/`HTML`/`PA1H` export |
 | **License / Pricing** | Docs/Examples: **MIT** · Hosted Cloud: **Free / Paid Tiers** | Core/Studio: **AGPL-3.0-only** · CI Action: **Apache-2.0** · B2B Commercial MSA |
+| **Docker Stateless Scanner** | [`padam-shield-mcp`](https://github.com/MaksimGalatin/padam-shield-mcp) (**Apache-2.0**) | Stateless `mcp.json` / prompt-injection / PCI DSS 4.0.1 SRI container gateway |
 
 ---
 
