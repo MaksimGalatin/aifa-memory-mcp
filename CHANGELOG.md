@@ -3,6 +3,14 @@
 The hosted server at `https://aifa.works/api/mcp`. Its code is private; this file is the public record of what changed
 and when. Dates are those of the deployment commits.
 
+## 2.0.0 — 22 November 2026
+- **17 MCP tools (up from 15):**
+  - **`memory_search` v2:** optional filters `since`, `until`, `channel` (`main|terminal|oracle|mcp`), `kind` (`user|assistant`), and `compact=true` (up to 30 compact hits to save agent context tokens), plus numeric `id` in results.
+  - **`memory_wake_up` (new, read-only, available on memory-only keys):** one-call session hydration combining plan/Arweave quota, last 5 memories across all channels, and optional semantic matches by `query` inside a random 128-bit data fence.
+  - **`memory_forget` (new, full keys only — strictly blocked on memory-only keys):** removes a specific record by numeric `id` from the owner's semantic index, destroys its per-record key if present, and records a cryptographic SHA-256 forget receipt.
+  - **Partner Autopilot (`find_clients` & `client_report`):** every returned site/report now includes an `agent_action_plan` (recommended service, compliance rule, and personalized outreach draft).
+  - **Quickstart Doctor & Live Browser Tester:** new `scripts/quickstart_doctor.py` CLI diagnostic and interactive Live MCP Tester + 7-client setup snippets on `https://aifa.works/mcp`.
+
 ## 1.9.8 — 13 November 2026
 Same rules as PADAM NOCTURNE 0.4.18: a name next to the word "key", "token" or "secret" is no longer masked as a key —
 a token's name with a date, an UPPER_SNAKE variable name, PascalCase, a model tag, SSH key file names, a value with

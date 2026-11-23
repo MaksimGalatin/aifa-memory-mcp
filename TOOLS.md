@@ -1,6 +1,6 @@
 # Tools
 
-The 15 tools of the AIfa Memory MCP server, exactly as the live server reports them (`tools/list`, server version 1.9.8). Rebuilt by `scripts/make_tools_md.py`.
+The 17 tools of the AIfa Memory MCP server, exactly as the live server reports them (`tools/list`, server version 2.0.0). Rebuilt by `scripts/make_tools_md.py`.
 
 Every tool works only with the account that owns the API key. The key decides whose memory and whose partner account is used; no tool accepts an email or user ID as input.
 
@@ -10,6 +10,8 @@ Every tool works only with the account that owns the API key. The key decides wh
 | [`memory_recent`](#memory_recent) | yes | Recent memory |
 | [`memory_write`](#memory_write) | no | Save to my AIfa memory |
 | [`memory_about`](#memory_about) | yes | About AIfa memory |
+| [`memory_wake_up`](#memory_wake_up) | yes | Session wake-up briefing (1 call) |
+| [`memory_forget`](#memory_forget) | no | Forget one memory record (with cryptographic receipt) |
 | [`account_status`](#account_status) | yes | My plan, permanent memory and earnings |
 | [`plans`](#plans) | yes | Plans and prices |
 | [`buy_plan`](#buy_plan) | no | Get a crypto invoice for a plan |
@@ -31,7 +33,12 @@ Search the user's AIfa memory by meaning: every conversation they had with AIfa 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
 | `query` | string | yes | What to look for, in natural language. |
-| `limit` | integer 1–12 | no | How many results (default 8). |
+| `limit` | integer 1–30 | no | How many results (default 8; up to 30 when compact=true). |
+| `since` | string | no | Optional ISO-8601 start date/timestamp filter (e.g. 2026-11-01). |
+| `until` | string | no | Optional ISO-8601 end date/timestamp filter (e.g. 2026-11-22). |
+| `channel` | string (main, terminal, oracle, mcp) | no | Optional channel filter. |
+| `kind` | string (user, assistant) | no | Optional speaker role filter. |
+| `compact` | boolean | no | When true, returns shorter snippets (up to 30 results) to save agent context tokens. |
 
 Hints: readOnly=true, destructive=false, idempotent=true, openWorld=false
 
@@ -70,6 +77,32 @@ What this memory is, where it lives and how it is protected. No user data.
 No parameters.
 
 Hints: readOnly=true, destructive=false, idempotent=true, openWorld=false
+
+## memory_wake_up
+
+**Session wake-up briefing (1 call)**
+
+One-call session hydration: returns your plan, Arweave permanent memory quota, last 5 memory entries, and (when query is passed) top semantic matches — all wrapped inside a random data fence.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `query` | string | no | Optional current task or topic to pull top relevant memories. |
+| `max_chars` | integer 400–8000 | no | Optional briefing character cap (default 3500). |
+
+Hints: readOnly=true, destructive=false, idempotent=true, openWorld=false
+
+## memory_forget
+
+**Forget one memory record (with cryptographic receipt)**
+
+Removes a specific memory record by numeric id (returned by memory_search) from your semantic index, destroys its per-record key if present, and issues a SHA-256 forget receipt. Disabled for memory-only keys.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | integer 1– | yes | Numeric record ID returned by memory_search. |
+| `reason` | string | no | Optional short reason stored in the forget receipt. |
+
+Hints: readOnly=false, destructive=true, idempotent=false, openWorld=false
 
 ## account_status
 
