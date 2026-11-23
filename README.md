@@ -11,7 +11,7 @@
   <a href="https://mcptry.com/servers/works.aifa/aifa-memory"><img src="https://mcptry.com/badge/works.aifa/aifa-memory" alt="mcptry" /></a>
   <a href="https://github.com/hashgraph-online/hol-guard/pull/8324"><img src="https://img.shields.io/badge/HOL_Guard-Listed_(%238324)-22C55E?style=flat-square" alt="HOL Guard Listed" /></a>
   <a href="https://aifa.works/mcp"><img src="https://img.shields.io/badge/Transport-Streamable_HTTP_(JSON--RPC_2.0)-14B8A6?style=flat-square" alt="Streamable HTTP" /></a>
-  <a href="TOOLS.md"><img src="https://img.shields.io/badge/Tools-17_(7_Memory_+_10_Account%2FPartner)-6366F1?style=flat-square" alt="15 MCP Tools" /></a>
+  <a href="TOOLS.md"><img src="https://img.shields.io/badge/Tools-18_(8_Memory_+_10_Account%2FPartner)-6366F1?style=flat-square" alt="18 MCP Tools" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Docs_%26_Examples-MIT-22C55E?style=flat-square" alt="MIT Docs" /></a>
   <a href="https://aifa.works/terms"><img src="https://img.shields.io/badge/Hosted_Cloud-CODE_Platform_Terms-F59E0B?style=flat-square" alt="CODE Platform Terms" /></a>
   <a href="https://github.com/CodeOfDigitalEternity"><img src="https://img.shields.io/badge/Org-CODE_Eternal_LLC_(NM_%230008138873)-1E293B?style=flat-square" alt="CODE Eternal LLC" /></a>
@@ -32,7 +32,7 @@
 Endpoint    https://aifa.works/api/mcp
 Transport   Streamable HTTP (JSON-RPC 2.0, stateless)
 Auth        Authorization: Bearer <your key>  (Full or Memory-Only scoped key)
-Version     2.0.0 · Registry: works.aifa/aifa-memory  ·  Protocol: 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
+Version     2.1.0 · Registry: works.aifa/aifa-memory  ·  Protocol: 2026-07-28, 2025-06-18, 2025-03-26, 2024-11-05
 ```
 
 ---
@@ -42,7 +42,7 @@ Version     2.0.0 · Registry: works.aifa/aifa-memory  ·  Protocol: 2026-07-28,
 - [Architecture: Hosted Cloud vs. Local PADAM NOCTURNE](#architecture-hosted-cloud-vs-local-padam-nocturne)
 - [Quick Start (30 Seconds)](#quick-start-30-seconds)
 - [Client Configurations (Claude Code · Antigravity · Cursor · VS Code · Desktop · Codex · Windsurf)](#client-configurations)
-- [All 17 Tools](#all-17-tools)
+- [All 18 Tools](#all-18-tools)
 - [Plans & Quotas](#plans--quotas)
 - [Security, Isolation & Conformance Verification](#security-isolation--conformance-verification)
 - [Local Engine & Agentic Shield (`padam-nocturne`)](#local-engine--agentic-shield-padam-nocturne)

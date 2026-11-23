@@ -49,7 +49,8 @@ info = (init or {}).get("result", {}).get("serverInfo", {})
 check("initialize without a key", st == 200 and info.get("name") == "aifa-memory", f"version {info.get('version')}")
 st, tl = rpc("tools/list")
 tools = (tl or {}).get("result", {}).get("tools", [])
-check("tools/list without a key lists 15 tools", len(tools) == 15, str(len(tools)))
+tool_names = {t.get("name") for t in tools if isinstance(t, dict)}
+check("tools/list without a key lists >= 18 tools inc. wake_up & forget_receipts", len(tools) >= 18 and {"memory_wake_up", "memory_forget", "memory_forget_receipts"}.issubset(tool_names), f"count={len(tools)}")
 props = {p for t in tools for p in (t.get("inputSchema", {}).get("properties") or {})}
 check("no tool takes an email or user id", not ({"email", "user_id", "userId", "account"} & props), ", ".join(sorted(props & {"email", "user_id", "userId", "account"})))
 st, call = rpc("tools/call", {"name": "memory_recent", "arguments": {}})
@@ -78,8 +79,7 @@ mkey = os.environ.get("AIFA_MCP_MEMORY_KEY")
 if mkey:
     _, tl = rpc("tools/list", key=mkey)
     names = {t["name"] for t in (tl or {}).get("result", {}).get("tools", [])}
-    check("memory-only key lists 7 tools", names == {"memory_search", "memory_recent", "memory_write", "memory_about",
-                                                     "memory_export", "plans", "account_status"}, ", ".join(sorted(names)))
+    check("memory-only key lists 9 read/memory tools", names == {"memory_search", "memory_recent", "memory_write", "memory_about", "memory_wake_up", "memory_forget_receipts", "memory_export", "plans", "account_status"}, ", ".join(sorted(names)))
     _, r = rpc("tools/call", {"name": "request_payout", "arguments": {"address": "T" + "1" * 33}}, mkey)
     check("memory-only key cannot request a payout", "memory-only" in tool_text(r), tool_text(r)[:80])
 else:

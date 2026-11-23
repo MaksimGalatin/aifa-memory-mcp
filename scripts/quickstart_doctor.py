@@ -83,6 +83,7 @@ def run_doctor(url: str = DEFAULT_URL, api_key: str = "") -> dict[str, Any]:
         "tools_count": len(tools),
         "has_wake_up": "memory_wake_up" in tool_names,
         "has_forget": "memory_forget" in tool_names,
+        "has_receipts": "memory_forget_receipts" in tool_names,
         "ms": round(ms2, 1),
     })
 
@@ -132,7 +133,7 @@ def run_doctor(url: str = DEFAULT_URL, api_key: str = "") -> dict[str, Any]:
 
 def print_client_configs(url: str, api_key: str) -> None:
     k = api_key or "<YOUR_AIFA_KEY>"
-    print("\n--- Ready-to-paste MCP client configs (7 clients) ---")
+    print("\n--- Ready-to-paste MCP client configs (10 clients) ---")
     print(f"1) Claude Code:\n   claude mcp add --transport http aifa-memory {url} --header \"Authorization: Bearer {k}\"\n")
     print("2) Cursor (~/.cursor/mcp.json):\n" + json.dumps({"mcpServers": {"aifa-memory": {"url": url, "headers": {"Authorization": f"Bearer {k}"}}}}, indent=2))
     print("\n3) VS Code (.vscode/mcp.json):\n" + json.dumps({"servers": {"aifa-memory": {"type": "http", "url": url, "headers": {"Authorization": f"Bearer {k}"}}}}, indent=2))
@@ -140,10 +141,13 @@ def print_client_configs(url: str, api_key: str) -> None:
     print("\n5) Gemini CLI (~/.gemini/settings.json):\n" + json.dumps({"mcpServers": {"aifa-memory": {"httpUrl": url, "headers": {"Authorization": f"Bearer {k}"}}}}, indent=2))
     print(f'\n6) OpenAI Codex (~/.codex/config.toml):\n[mcp_servers.aifa_memory]\nurl = "{url}"\nbearer_token_env_var = "AIFA_MCP_TOKEN"')
     print("\n7) Claude Desktop (claude_desktop_config.json):\n" + json.dumps({"mcpServers": {"aifa-memory": {"command": "npx", "args": ["-y", "mcp-remote", url, "--header", "Authorization:${AUTH_HEADER}"], "env": {"AUTH_HEADER": f"Bearer {k}"}}}}, indent=2))
+    print("\n8) Cline (cline_mcp_settings.json):\n" + json.dumps({"mcpServers": {"aifa-memory": {"url": url, "type": "streamableHttp", "headers": {"Authorization": f"Bearer {k}"}}}}, indent=2))
+    print("\n9) Roo Code (.roo/mcp.json):\n" + json.dumps({"mcpServers": {"aifa-memory": {"type": "streamable-http", "url": url, "headers": {"Authorization": f"Bearer {k}"}}}}, indent=2))
+    print("\n10) Zed (settings.json):\n" + json.dumps({"context_servers": {"aifa-memory": {"source": "custom", "command": "npx", "args": ["-y", "mcp-remote", url, "--header", f"Authorization: Bearer {k}"]}}}, indent=2))
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="AIfa Memory MCP Quickstart Doctor (v2.0.0)")
+    parser = argparse.ArgumentParser(description="AIfa Memory MCP Quickstart Doctor (v2.1.0)")
     parser.add_argument("--url", default=os.environ.get("AIFA_MCP_URL", DEFAULT_URL), help="MCP endpoint URL")
     parser.add_argument("--key", default=os.environ.get("AIFA_MCP_KEY", ""), help="Optional amcp_... Bearer key")
     parser.add_argument("--json", action="store_true", dest="as_json", help="Print JSON output")
