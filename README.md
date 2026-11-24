@@ -62,7 +62,7 @@ This public repository holds the protocol specification, connection templates, c
 | **Memory-only scoped keys** | Yes (`{"scope": "memory"}` blocks payouts/billing tools) | Yes (`Ed25519` Capability Leases + `PADAM_STRICT=1`) |
 | **Prompt injection & secret DLP** | Write masking, command filter, fenced read output (`conformance.py`) | Full 4-Ring Agentic Shield v2 (214/214 RedTeam, AIFaSecurity-100 Grade S, SRI/CSP, SIEM) |
 | **Portable exit** | Full Markdown export via `memory_export` anytime | Direct SQLite ownership + `JSON`/`HTML`/`PA1H` export |
-| **License / Pricing** | Docs/Examples: **MIT** · Hosted Cloud: **Free / Paid Tiers** | Core/Studio: **AGPL-3.0-only** · CI Action: **Apache-2.0** · B2B Commercial MSA |
+| **License / Pricing** | Docs/Examples: **MIT** · Hosted Cloud: **Free / Paid Tiers** | Core/Studio (0.8.0+): **PADAM License 1.0** (`LicenseRef-PADAM-1.0`, source-available; `<=0.7.2` remain `AGPL-3.0-only`) · CI Action: **Apache-2.0** · B2B Commercial MSA |
 | **Docker Stateless Scanner** | [`padam-shield-mcp`](https://github.com/MaksimGalatin/padam-shield-mcp) (**Apache-2.0**) | Stateless `mcp.json` / prompt-injection / PCI DSS 4.0.1 SRI container gateway |
 
 ---
@@ -240,7 +240,7 @@ See **[`HOSTED-POLICY.md`](HOSTED-POLICY.md)**, **[`SECURITY.md`](SECURITY.md)**
 
 Need **100% offline local-first memory** (single SQLite file), **PADAM Agentic Shield v2** (`SRI/CSP/Magecart` supply-chain CI scanner with `SARIF 2.1.0`, anti-poisoning, anti-replay HMAC, canary kill-switch, Slack/Teams/SIEM webhooks), or the desktop **PADAM Studio** UI?
 
-- **Local Engine & Studio (`AGPL-3.0-only` + Commercial):** [`MaksimGalatin/padam-nocturne`](https://github.com/MaksimGalatin/padam-nocturne)
+- **Local Engine & Studio (PADAM License 1.0, source-available, 0.8.0+; `<=0.7.2` remain `AGPL-3.0-only`; + Commercial):** [`MaksimGalatin/padam-nocturne`](https://github.com/MaksimGalatin/padam-nocturne)
 - **GitHub Organization:** [`CodeOfDigitalEternity`](https://github.com/CodeOfDigitalEternity)
 - **Enterprise Commercial Licensing / Mutual NDA / Zero-Telemetry DPA:** [`contact@codeofdigitaleternity.com`](mailto:contact@codeofdigitaleternity.com)
 

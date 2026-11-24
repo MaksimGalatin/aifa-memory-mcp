@@ -39,7 +39,7 @@
 
   <g class="rowC">
     <rect x="24" y="188" width="852" height="60" rx="8" fill="#0f172a" stroke="url(#border)" stroke-width="1.5"/>
-    <text x="40" y="213" fill="#f8fafc" class="sans" font-size="14" font-weight="700">Official MCP Registry: works.aifa/aifa-memory (v1.9.8) · Check live: python scripts/conformance.py</text>
+    <text x="40" y="213" fill="#f8fafc" class="sans" font-size="14" font-weight="700">Official MCP Registry: works.aifa/aifa-memory (v2.3.0) · Check live: python scripts/conformance.py</text>
     <text x="40" y="234" fill="#22d3ee" class="mono">Free hosted tier included · Optional encrypted Arweave L3 + Agent Partner Revenue Share</text>
   </g>
 </svg>
