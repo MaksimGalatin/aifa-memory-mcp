@@ -11,7 +11,7 @@
   <a href="https://mcptry.com/servers/works.aifa/aifa-memory"><img src="https://mcptry.com/badge/works.aifa/aifa-memory" alt="mcptry" /></a>
   <a href="https://github.com/hashgraph-online/hol-guard/pull/8324"><img src="https://img.shields.io/badge/HOL_Guard-Listed_(%238324)-22C55E?style=flat-square" alt="HOL Guard Listed" /></a>
   <a href="https://aifa.works/mcp"><img src="https://img.shields.io/badge/Transport-Streamable_HTTP_(JSON--RPC_2.0)-14B8A6?style=flat-square" alt="Streamable HTTP" /></a>
-  <a href="TOOLS.md"><img src="https://img.shields.io/badge/Tools-18_(8_Memory_+_10_Account%2FPartner)-6366F1?style=flat-square" alt="18 MCP Tools" /></a>
+  <a href="TOOLS.md"><img src="https://img.shields.io/badge/Tools-19_(9_Memory_%2F_Family_+_10_Account%2FPartner)-6366F1?style=flat-square" alt="19 MCP Tools" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/Docs_%26_Examples-MIT-22C55E?style=flat-square" alt="MIT Docs" /></a>
   <a href="https://aifa.works/terms"><img src="https://img.shields.io/badge/Hosted_Cloud-CODE_Platform_Terms-F59E0B?style=flat-square" alt="CODE Platform Terms" /></a>
   <a href="https://github.com/CodeOfDigitalEternity"><img src="https://img.shields.io/badge/Org-CODE_Eternal_LLC_(NM_%230008138873)-1E293B?style=flat-square" alt="CODE Eternal LLC" /></a>
