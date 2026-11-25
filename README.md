@@ -232,6 +232,8 @@ export AIFA_MCP_MEMORY_KEY="your-memory-only-key"
 python scripts/conformance.py
 ```
 
+Last full run, 24 November 2026, against the live endpoint: **10 of 10 checks pass** — 5 without a key, 3 with a full key (secret masked, read output fenced, command-like text not stored), 2 with a memory-only key (exactly 10 tools listed, `request_payout` refused).
+
 See **[`HOSTED-POLICY.md`](HOSTED-POLICY.md)**, **[`SECURITY.md`](SECURITY.md)**, and **[`CHANGELOG.md`](CHANGELOG.md)** for full operational transparency.
 
 ---
