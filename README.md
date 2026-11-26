@@ -7,6 +7,7 @@
 # AIfa Memory — Hosted Streamable HTTP MCP Server
 
 <p align="center">
+  <a href="https://glama.ai/mcp/connectors/works.aifa/aifa-memory"><img src="https://glama.ai/mcp/connectors/works.aifa/aifa-memory/badges/score.svg" alt="AIfa Memory MCP connector on Glama" /></a>
   <a href="https://registry.modelcontextprotocol.io"><img src="https://img.shields.io/badge/MCP_Registry-works.aifa%2Faifa--memory-0EA5E9?style=flat-square" alt="MCP Registry" /></a>
   <a href="https://mcptry.com/servers/works.aifa/aifa-memory"><img src="https://mcptry.com/badge/works.aifa/aifa-memory" alt="mcptry" /></a>
   <a href="https://github.com/hashgraph-online/hol-guard/pull/8324"><img src="https://img.shields.io/badge/HOL_Guard-Listed_(%238324)-22C55E?style=flat-square" alt="HOL Guard Listed" /></a>
